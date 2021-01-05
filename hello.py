@@ -1,6 +1,6 @@
-name = ["Ben", "Melissa", "Joe", "Lizzo", "Fred"]
+names = ["Ben", "Melissa", "Joe", "Lizzo", "Fred"]
 
-#Says hello to everyone in the 'name' list!
-for i in range(0, len(name)):
-    print("Hello, " + name[i] + "!")
+#Says hello to everyone in the 'names' list!
+for name in names:
+    print("Hello, " + name + "!")
 
