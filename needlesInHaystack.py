@@ -2,26 +2,20 @@ haystack = "ajkgjlkjiosjifoejojwioejofjowdjowjedf"
 haystackList = list(haystack)
 length = len(haystackList)
 result = []
-needles = 0
+needles = -1
 result.insert(0, haystackList[0])
 foundNeedle = 1
 
 #returns a list of all the characters found in a string, in order, without duplicates
-while needles < length:
+while needles < (length - 1):
     i = 0
-    print("needles: " + str(needles))
-    print("current needle in haystack: " + haystackList[needles])
-    print("result progress: " + str(result))
-    print("foundNeedle: " + str(foundNeedle))
+    needles += 1
     while i < foundNeedle:
-        print("i value: " + str(i))
-        print("foundNeedle value: " + str(foundNeedle))
-        print("current needle in haystack: " + haystackList[needles])
-        print("current needle in result: " + result[i])
         if haystackList[needles] == result[i]:
-            i += 1
+            i = foundNeedle
         else:
-            result.insert(foundNeedle, haystackList[needles])
-            foundNeedle += 1
-        needles += 1
+            i += 1
+            if i == foundNeedle:
+                result.insert(foundNeedle, haystackList[needles])
+                foundNeedle += 1
 print(result)
